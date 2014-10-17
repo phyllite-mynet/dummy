@@ -1,8 +1,8 @@
-$unicorn_user = "cyworks"
-$unicorn_group = "cyworks"
+$unicorn_user = "vagrant"
+$unicorn_group = "vagrant"
 
 $dev_processes = 4 # for development
-$prod_processes = 16 # for production
+$prod_processes = 4 # for production
 
 # Restart any workers that haven't responded in 30 seconds
 $timeout = 30
@@ -14,7 +14,7 @@ rails_env = ENV['RAILS_ENV'] || 'development'
 worker_processes (rails_env == 'production' ? $prod_processes : $dev_processes)
 
 # for capistrano
-working_directory "/var/www/redm_android/current"
+working_directory "/var/www/dummy/current"
 
 # Load rails+github.git into the master before forking workers
 # for super-fast worker spawn times
